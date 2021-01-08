@@ -149,7 +149,7 @@ function getAliasesForLightDist() {
 const LIBRARY = 'Hls';
 const LIBRARY_TARGET = 'umd';
 const LIBRARY_EXPORT = 'default';
-const GLOBAL_OBJECT = 'this';
+const GLOBAL_OBJECT = 'this || window';
 
 const multiConfig = [
   {
