@@ -146,6 +146,11 @@ function getAliasesForLightDist() {
   return aliases;
 }
 
+const LIBRARY = 'Hls';
+const LIBRARY_TARGET = 'umd';
+const LIBRARY_EXPORT = 'default';
+const GLOBAL_OBJECT = 'this';
+
 const multiConfig = [
   {
     name: 'debug',
@@ -156,10 +161,10 @@ const multiConfig = [
       sourceMapFilename: 'hls.js.map',
       path: path.resolve(__dirname, 'dist'),
       publicPath: '/dist/',
-      library: 'Hls',
-      libraryTarget: 'umd',
-      libraryExport: 'default',
-      globalObject: 'this', // https://github.com/webpack/webpack/issues/6642#issuecomment-370222543
+      library: LIBRARY,
+      libraryTarget: LIBRARY_TARGET,
+      libraryExport: LIBRARY_EXPORT,
+      globalObject: GLOBAL_OBJECT, // https://github.com/webpack/webpack/issues/6642#issuecomment-370222543
     },
     plugins: mainPlugins,
     devtool: 'source-map',
@@ -172,10 +177,10 @@ const multiConfig = [
       chunkFilename: '[name].js',
       path: path.resolve(__dirname, 'dist'),
       publicPath: '/dist/',
-      library: 'Hls',
-      libraryTarget: 'umd',
-      libraryExport: 'default',
-      globalObject: 'this',
+      library: LIBRARY,
+      libraryTarget: LIBRARY_TARGET,
+      libraryExport: LIBRARY_EXPORT,
+      globalObject: GLOBAL_OBJECT,
     },
     plugins: mainPlugins,
     devtool: 'source-map',
@@ -189,10 +194,10 @@ const multiConfig = [
       sourceMapFilename: 'hls.light.js.map',
       path: path.resolve(__dirname, 'dist'),
       publicPath: '/dist/',
-      library: 'Hls',
-      libraryTarget: 'umd',
-      libraryExport: 'default',
-      globalObject: 'this',
+      library: LIBRARY,
+      libraryTarget: LIBRARY_TARGET,
+      libraryExport: LIBRARY_EXPORT,
+      globalObject: GLOBAL_OBJECT,
     },
     resolve: {
       alias: getAliasesForLightDist(),
@@ -208,10 +213,10 @@ const multiConfig = [
       chunkFilename: '[name].js',
       path: path.resolve(__dirname, 'dist'),
       publicPath: '/dist/',
-      library: 'Hls',
-      libraryTarget: 'umd',
-      libraryExport: 'default',
-      globalObject: 'this',
+      library: LIBRARY,
+      libraryTarget: LIBRARY_TARGET,
+      libraryExport: LIBRARY_EXPORT,
+      globalObject: GLOBAL_OBJECT,
     },
     resolve: {
       alias: getAliasesForLightDist(),
@@ -230,9 +235,9 @@ const multiConfig = [
       path: path.resolve(__dirname, 'dist'),
       publicPath: '/dist/',
       library: 'HlsDemo',
-      libraryTarget: 'umd',
-      libraryExport: 'default',
-      globalObject: 'this', // https://github.com/webpack/webpack/issues/6642#issuecomment-370222543
+      libraryTarget: LIBRARY_TARGET,
+      libraryExport: LIBRARY_EXPORT,
+      globalObject: GLOBAL_OBJECT, // https://github.com/webpack/webpack/issues/6642#issuecomment-370222543
     },
     plugins: [
       ...mainPlugins,
